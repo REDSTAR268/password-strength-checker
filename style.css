@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0ecff, #c7d9ff);
+    color: #172b4d;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(21, 94, 239, 0.12);
+}
+
+/* Two-column dashboard */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+h1 {
+    color: #155eef;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+}
+
+.password-panel,
+.requirements-panel {
+    padding: 16px;
+    border: 1px solid #dbeafe;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(21, 94, 239, 0.06);
+}
+
+.container > p {
+    text-align: center;
+    color: #667895;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #f8fbff;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #155eef;
+    box-shadow: 0 0 0 4px rgba(21, 94, 239, 0.12);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #155eef, #3980ee);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1048bd, #155eef);
+    box-shadow: 0 5px 15px rgba(21, 94, 239, 0.25);
+    transform: translateY(-2px);
+}
+
+.password-field {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.password-field input {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.password-field .toggle-password {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #172b4d, #155eef);
+    color: white;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.password-field .toggle-password:hover {
+    background: linear-gradient(135deg, #155eef, #172b4d);
+}
+
+.password-field .toggle-password[hidden] {
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #edf4ff;
+    font-weight: bold;
+    text-align: center;
+}
+/* Password strength colours */
+
+#result.weak {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+#result.medium {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+#result.strong {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+/* Theme switch card */
+.theme-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+}
+
+/* Theme title */
+.theme-text h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: #172b4d;
+}
+
+/* Theme description */
+.theme-text p {
+    margin: 0;
+    color: #667895;
+}
+
+/* Switch container */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 76px;
+    height: 40px;
+    margin: 0;
+}
+
+/* Hide the original checkbox */
+
+.theme-switch input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+/* Switch background */
+.theme-slider {
+    position: absolute;
+    inset: 0;
+    background: #e5e7eb;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* White moving circle */
+.theme-slider::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 4px;
+    top: 4px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Blue background when switched on */
+.theme-switch input:checked + .theme-slider {
+    background: #3980ee;
+}
+
+/* Move the circle to the right */
+.theme-switch input:checked + .theme-slider::before {
+    transform: translateX(36px);
+}
+
+.theme-switch input:focus-visible + .theme-slider {
+    outline: 3px solid #155eef;
+    outline-offset: 4px;
+}
+
+@keyframes eye-shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toggle-password.shake {
+    animation: eye-shake 0.35s ease;
+}
+
+/* Smaller screens */
+@media (max-width: 700px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .password-panel,
+    .requirements-panel {
+        padding: 18px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
+
+.checklist li {
+    list-style: none;
+    position: relative;
+    padding-left: 28px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 6px 0;
+}
+
+.checklist li::before {
+    content: "○";
+    position: absolute;
+    left: 0;
+    color: #94a3b8;
+}
+
+.checklist li.is-met::before {
+    content: "✓";
+    color: #16a34a;
+}
+
+.checklist li.is-met {
+    color: #16a34a;
+}
+
+/* Dark Mode */
+
+body.dark-mode {
+    background: #111827;
+    color: #e5e7eb;
+}
+
+body.dark-mode .container {
+    background: #1f2937;
+}
+
+body.dark-mode .password-panel,
+body.dark-mode .requirements-panel {
+    background: #273449;
+    border-color: #475569;
+}
+
+body.dark-mode h1 {
+    color: #93c5fd;
+}
+
+body.dark-mode .theme-card {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+body.dark-mode .theme-text h2,
+body.dark-mode .theme-text p {
+    color: #e5e7eb;
+}
+
+body.dark-mode #result {
+    background: #374151;
+    color: #e5e7eb;
+}
+
+/* Keep password strength colours in Dark Mode */
+
+body.dark-mode #result.weak {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+body.dark-mode #result.medium {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+body.dark-mode #result.strong {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+body.dark-mode input {
+    background: #374151;
+    color: white;
+    border-color: #6b7280;
+}
+
+/* Dark Mode - Checklist Design */
+
+body.dark-mode .checklist {
+    background: #273449;
+    border: 1px solid #475569;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+body.dark-mode .checklist li {
+    background: #374151;
+    border: 1px solid #4b5563;
+    border-radius: 8px;
+    color: #e5e7eb;
+}
+
+body.dark-mode .checklist h2 {
+    color: #bfdbfe;
+}
+
+body.dark-mode .checklist li.is-met {
+    background: #143d32;
+    border-color: #166534;
+    color: #86efac;
+}
+
+body.dark-mode .checklist li.is-met::before {
+    color: #4ade80;
+}

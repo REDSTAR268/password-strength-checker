@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+
+        <h1>Password Strength Checker</h1>
+
+        <div class="dashboard-grid">
+
+            <!-- Password checker -->
+            <section class="password-panel">
+
+                <p>Enter a password to check its strength.</p>
+
+                    <form id="password-form" novalidate>
+
+                    <label for="password">Enter password:</label>
+
+                    <div class="password-field">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggle-password"
+                            class="toggle-password"
+                            aria-label="Show password"
+                            hidden
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                    <button type="submit">Check Password</button>
+
+                </form>
+
+                <p id="result" aria-live="polite">
+                    Your result will appear here.
+                </p>
+
+            </section>
+
+            <!-- Theme and password requirements -->
+            <section class="requirements-panel">
+
+                <div class="theme-card">
+
+                    <div class="theme-text">
+                        <h2 id="theme-title">Light Mode</h2>
+                        <p id="theme-description">Clean and bright</p>
+                    </div>
+
+                    <label class="theme-switch">
+                        
+                        <input
+                            type="checkbox"
+                            id="theme-toggle"
+                            aria-label="Toggle dark mode"
+                        >
+                        <span class="theme-slider"></span>
+                    </label>
+
+                </div>
+
+                <div class="checklist">
+
+                    <h2>Password Requirements</h2>
+
+                    <ul>
+                        <li id="req-length">At least 10 characters</li>
+                        <li id="req-number">Contains a number</li>
+                        <li id="req-letter">Contains a letter</li>
+                        <li id="req-symbol">Contains a special symbol</li>
+                        <li id="req-uppercase">Contains an uppercase letter</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
