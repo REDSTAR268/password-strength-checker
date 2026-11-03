@@ -62,8 +62,10 @@ The goal of this project is to practise HTML, CSS, and JavaScript while learning
 
 <h2>Light mode</h2>
 
-<img width="960" height="450" alt="image" src="https://github.com/user-attachments/assets/4e60fed4-801a-4478-84ea-d30b1446abc4" />
+<img width="1731" height="800" alt="Screenshot_3-11-2026_133438_127 0 0 1" src="https://github.com/user-attachments/assets/8cdd64ed-fc8b-48a8-9918-2c866305be41" />
+
 
 <h2>Dark mode</h2>
 
-<img width="958" height="450" alt="image" src="https://github.com/user-attachments/assets/f9000e34-fd59-4426-b651-26d56bbf08fd" />
+<img width="1731" height="800" alt="Screenshot_3-11-2026_13355_127 0 0 1" src="https://github.com/user-attachments/assets/b36cdc40-0382-4e2b-9c60-7c2bb8cba17d" />
+
