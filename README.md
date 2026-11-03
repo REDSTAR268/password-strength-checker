@@ -59,3 +59,11 @@ The goal of this project is to practise HTML, CSS, and JavaScript while learning
 ---
 
 *This is a beginner portfolio project created for learning and practice.*
+
+<h2>Light mode</h2>
+
+<img width="960" height="450" alt="image" src="https://github.com/user-attachments/assets/4e60fed4-801a-4478-84ea-d30b1446abc4" />
+
+<h2>Dark mode</h2>
+
+<img width="958" height="450" alt="image" src="https://github.com/user-attachments/assets/f9000e34-fd59-4426-b651-26d56bbf08fd" />
